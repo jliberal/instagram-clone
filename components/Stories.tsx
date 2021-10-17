@@ -1,23 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import faker from 'faker';
 import Story from '../components/Story';
-
-
-interface Stories {
-  id: number;
-  name: string;
-  username: string;
-  avatar: string;
-  email: string;
-  dob: Date;
-  phone: string;
-  address: Faker.Address;
-  website: string;
-  company: Faker.Company;
-}
+import contextualCardType from '../types/contextualCard';
 
 function Stories() {
-  const [suggestions, setSuggestions ] = useState<Stories[]>([])
+  const [suggestions, setSuggestions ] = useState<contextualCardType[]>([])
 
   useEffect(() => {
     const suggestions = [...Array(20)].map((_, i) => ({ 
